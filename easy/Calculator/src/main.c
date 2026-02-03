@@ -6,6 +6,10 @@
 #define RAYGUI_IMPLEMENTATION
 #include <raygui.h>
 #include <string.h>
+#include "actions.h"
+#include "calculator.h"
+#include "display.h"
+#include "stack.h"
 #include "core.h"
 
 const int WINDOW_WIDTH = 300;
