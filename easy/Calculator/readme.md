@@ -1,10 +1,11 @@
 ## Program info:
 
-**Raylib & Raygui**: Cross-platform library for graphics, window management and input handling.
+### **Raylib & Raygui**
+- Cross-platform library for graphics, window management and input handling.
 
-**Shunting Yard Algorithm**: expression parsing (handles operator precedence: '*' and '/' before '+' and '-') and standard stack operations for expression eval → <https://en.wikipedia.org/wiki/Shunting_yard_algorithm><br>
-
-**Structures**: `CalcStack` holds two stacks (numbers and operators) for algorithm, and `ButtonDef` struct stores button label, type and value for button handling.
+### **Shunting Yard Algorithm**
+- expression parsing (handles operator precedence: '*' and '/' before '+' and '-') and standard stack operations for expression eval → <https://en.wikipedia.org/wiki/Shunting_yard_algorithm><br>
+- `CalcStack` struct holds two stacks (numbers & operators) for algorithm, and `ButtonDef` struct stores button label/type/value for button handling.
 
 ### Features:
 - Allows you to do basic math
