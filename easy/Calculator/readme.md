@@ -1,7 +1,7 @@
 ## Program info:
 
-### **Raylib & Raygui**
-- Cross-platform library for graphics, window management and input handling.
+### **raygui**
+- Cross-platform, simple and easy-to-use immediate-mode gui C library → <https://github.com/raysan5/raygui>
 
 ### **Shunting Yard Algorithm**
 - expression parsing (handles operator precedence: '*' and '/' before '+' and '-') and standard stack operations for expression eval → <https://en.wikipedia.org/wiki/Shunting_yard_algorithm><br>
