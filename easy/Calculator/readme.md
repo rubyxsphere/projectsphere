@@ -1,4 +1,4 @@
-### Program info:
+## Program info:
 
 **Raylib & Raygui**: Cross-platform library for graphics, window management and input handling.
 

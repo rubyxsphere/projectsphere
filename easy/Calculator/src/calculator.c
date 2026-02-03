@@ -9,10 +9,11 @@
 
 static CalcStack stack = {0};
 
-void initStack() {
-    stack.op_top = -1;
-    stack.num_top = -1;
-}
+#define ERROR_EXPECTED_NUMBER "EXPECTED NUMBER"
+#define ERROR_INVALID_EXPRESSION "INVALID EXPRESSION"
+#define ERROR_DIVISION_BY_ZERO "DIVISION BY ZERO"
+#define ERROR_INVALID_OPERATOR "INVALID OPERATOR"
+#define ERROR_UNBALANCED_EXPRESSION "UNBALANCED EXPRESSION"
 
 int precedence(char op) {
     switch (op) {
@@ -51,7 +52,7 @@ double applyOperator(char op, double a, double b) {
 
 // Shunting Yard algorithm
 bool evalCalc(char *display) {
-    initStack();
+    initStack(&stack);
 
     char *expr = display;
     char *token_start = expr;
@@ -78,7 +79,7 @@ bool evalCalc(char *display) {
                 }
                 else
                 {
-                    strcpy(display, "Error");
+                    strcpy(display, ERROR_EXPECTED_NUMBER);
                     return false;
                 }
             }
@@ -96,7 +97,7 @@ bool evalCalc(char *display) {
 
                     char stack_op = popOperator(&stack);
                     if (stack.num_top < 1) {
-                        strcpy(display, "Error");
+                        strcpy(display, ERROR_INVALID_EXPRESSION);
                         return false;
                     }
 
@@ -105,7 +106,7 @@ bool evalCalc(char *display) {
                     double result = applyOperator(stack_op, a, b);
 
                     if (isnan(result)) {
-                        strcpy(display, "Div by 0");
+                        strcpy(display, ERROR_DIVISION_BY_ZERO);
                         return false;
                     }
 
@@ -115,9 +116,8 @@ bool evalCalc(char *display) {
                 pushOperator(&stack, op);
                 token_start++;
                 expecting_number = true;
-            }
-            else {
-                strcpy(display, "Error");
+            } else {
+                strcpy(display, ERROR_INVALID_OPERATOR);
                 return false;
             }
         }
@@ -125,7 +125,7 @@ bool evalCalc(char *display) {
 
     while (stack.op_top >= 0) {
         if (stack.num_top < 1) {
-            strcpy(display, "Error");
+            strcpy(display, ERROR_INVALID_EXPRESSION);
             return false;
         }
 
@@ -135,7 +135,7 @@ bool evalCalc(char *display) {
         double result = applyOperator(op, a, b);
 
         if (isnan(result)) {
-            strcpy(display, "Div by 0");
+            strcpy(display, ERROR_DIVISION_BY_ZERO);
             return false;
         }
 
@@ -143,7 +143,7 @@ bool evalCalc(char *display) {
     }
 
     if (stack.num_top != 0) {
-        strcpy(display, "Error");
+        strcpy(display, ERROR_UNBALANCED_EXPRESSION);
         return false;
     }
 

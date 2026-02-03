@@ -6,12 +6,13 @@
 #define RAYGUI_IMPLEMENTATION
 #include <raygui.h>
 #include <string.h>
-#include "actions.h"
 #include "calculator.h"
+#include "actions.h"
 #include "display.h"
 #include "stack.h"
 #include "core.h"
 
+// UI
 const int WINDOW_WIDTH = 300;
 const int WINDOW_HEIGHT = 400;
 const int TEXTBOX_PADDING = 10;
@@ -21,6 +22,7 @@ const int GRID_ROWS = 4;
 const int GRID_SPACING = 5;
 const int GRID_START_X = 20;
 const int GRID_START_Y = 100;
+const int WINDOW_COLOR = 0xE0E0E0FF;
 
 ButtonDef buttonDefs[] = {
     // 1st row
@@ -60,7 +62,7 @@ void setupGUI() {
     InitWindow(WINDOW_WIDTH, WINDOW_HEIGHT, "Calculator");
     SetTargetFPS(30);
 
-    GuiSetStyle(DEFAULT, BASE_COLOR_NORMAL, 0xE0E0E0FF);
+    GuiSetStyle(DEFAULT, BASE_COLOR_NORMAL, WINDOW_COLOR);
     GuiSetStyle(BUTTON, BORDER_WIDTH, 1);
     GuiSetStyle(DEFAULT, TEXT_SIZE, 20);
 }
@@ -88,7 +90,7 @@ int main() {
             CheckCollisionPointRec(GetMousePosition(), textBoxRect)) {
             SetClipboardText(display);
             snprintf(notificationText, sizeof(notificationText), "Copied %s to the clipboard.", display);
-            notificationTimer = 90; // 3 seconds, 30 FPS
+            notificationTimer = 90;
         }
 
         GuiTextBox(textBoxRect, display, 256, false);
