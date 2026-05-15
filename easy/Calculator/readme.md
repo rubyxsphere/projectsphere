@@ -1,4 +1,4 @@
-# Calculator with Shunting Yard Engine
+# Calculator with Shunting Yard Algorithm
 
 A working calculator that respects math operator precedence. Built in C with [raygui](https://github.com/raysan5/raygui)
 
