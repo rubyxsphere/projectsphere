@@ -1,11 +1,15 @@
-## Program info:
+# Calculator with Shunting Yard Engine
 
-**Raylib & Raygui**: Cross-platform library for graphics, window management and input handling.
+A working calculator that respects math operator precedence. Built in C with [raygui](https://github.com/raysan5/raygui)
 
-**Shunting Yard Algorithm**: expression parsing (handles operator precedence: '*' and '/' before '+' and '-') and standard stack operations for expression eval → <https://en.wikipedia.org/wiki/Shunting_yard_algorithm><br>
+What it does:
 
-**Structures**: `CalcStack` holds two stacks (numbers and operators) for algorithm, and `ButtonDef` struct stores button label, type and value for button handling.
+- Parses and evaluates expressions like 3+4*2/0.5
 
-### Features:
-- Allows you to do basic math
-- Clicking the display copies the current number to clipboard
+- Handles negative numbers
+
+- Catches division by zero and invalid input
+
+- Click the display to copy result to clipboard
+
+The purpose of me building this tool: to show I can build a complete interactive tool from scratch in a language I have little knowledge with.
