@@ -1,10 +1,10 @@
 # Trying to make this work on both windows and linux
 CC = gcc
-CFLAGS = -Iinclude -Isrc -Wall -Wextra -O2 -Wno-unused-parameter
+CFLAGS = -Iinclude -Isrc -Wall -Wextra -Os -ffunction-sections -fdata-sections -Wno-unused-parameter
 
 # Cross-platform settings
 ifeq ($(OS),Windows_NT)
-    LDFLAGS = -lraylib -lopengl32 -lgdi32 -lwinmm -s -mwindows
+    LDFLAGS = -lraylib -lopengl32 -lgdi32 -lwinmm -s -mwindows -Wl,-subsystem,windows -Wl,--gc-sections
     CLEAN_CMD = cmd /c "if exist $(BUILD_DIR) rd /s /q $(BUILD_DIR)"
     MKDIR_CMD = cmd /c if not exist $(BUILD_DIR) mkdir $(BUILD_DIR)
     EXE_EXT = .exe

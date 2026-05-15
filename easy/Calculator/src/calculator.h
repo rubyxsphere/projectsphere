@@ -3,9 +3,8 @@
 
 #include <stdbool.h>
 
+enum { DISPLAY_CAPACITY = 64 };
+
 bool evalCalc(char *display);
-double applyOperator(char op, double a, double b);
-int precedence(char op);
-bool isLeftAssociative(char op);
 
 #endif
