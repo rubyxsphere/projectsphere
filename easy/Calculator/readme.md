@@ -13,3 +13,20 @@ What it does:
 - Click the display to copy result to clipboard
 
 The purpose of me building this tool: to show I can build a complete interactive tool from scratch in a language I have little knowledge with.
+
+# Required tools (Linux)
+
+    make
+    gcc
+
+# Required tools (Windows)
+
+    MSYS2 or MinGW-w64
+    make
+    gcc
+
+# Instructions
+
+    make
+    make all
+    make clean
