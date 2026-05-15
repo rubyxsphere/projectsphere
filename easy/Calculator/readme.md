@@ -12,4 +12,4 @@ What it does:
 
 - Click the display to copy result to clipboard
 
-The purpose of me building this tool: to show I can build a complete interactive tool from scratch in a language I have little knowledge with.
+The purpose of me building this tool: to show I can build a simple interactive tool from scratch in a language I have little knowledge with.
