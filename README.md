@@ -10,4 +10,4 @@
 
 > [!NOTE]
 > Some tools might contain bugs. I don't plan to fix those unless it prevents the execution of the program itself.<br>
-> In the final stages of my code I tend to do a full AI overview, to check for errors and to improve safety/performance.
+> In the final stages I do a full AI overview, to check for errors and to improve code safety/performance.
