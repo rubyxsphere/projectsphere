@@ -9,5 +9,5 @@
 > **There are no installers or compiled binaries. Everything will have to be compiled.**
 
 > [!NOTE]
-> Some tools might contain bugs. I don't plan to fix those unless it prevents the execution of the program itself.<br>
-> In the final stages I do a full AI overview, to check for errors and to improve code safety/performance.
+> **Some tools might contain bugs. I don't plan to fix those unless it prevents the execution of the program itself.**<br>
+> **In the final stages I do a full AI overview, to check for errors and to improve code safety/performance.**
