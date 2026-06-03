@@ -95,6 +95,11 @@ public class TodoAppWindow {
         frame.addWindowListener(
             new WindowAdapter() {
                 @Override
+                public void windowClosing(WindowEvent e) {
+                    taskManager.save();
+                }
+
+                @Override
                 public void windowClosed(WindowEvent e) {
                     synchronized (TodoAppWindow.class) {
                         instance = null;

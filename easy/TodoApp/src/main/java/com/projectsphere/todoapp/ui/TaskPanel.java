@@ -188,6 +188,7 @@ public class TaskPanel extends JPanel {
         if (selected != null) {
             TaskStatus newStatus = TaskStatus.valueOf(selected);
             task.setTaskStatus(newStatus);
+            taskManager.save();
             if (onTaskUpdated != null) {
                 onTaskUpdated.run();
             }
