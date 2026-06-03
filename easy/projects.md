@@ -1,7 +1,7 @@
 ## Calculator - DONE
     A classic, simple yet overdone. But it's still something I've always wanted to do.
 
-## TODO app - DONE
+## TodoApp - DONE
     Focused on making an error proof TODO app. Simple features, nothing crazy.
 
 ## Paint - made in Python
